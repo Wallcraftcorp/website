@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallcraft Wallpaper</title>
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/Wallcraftcorp/website/refs/heads/main/Wallcraft_favicon.png"
+        type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'BricolageGrotesque';
+            src: url('BricolageGrotesque-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'BricolageGrotesque';
+            src: url('BricolageGrotesque-Semibold.ttf') format('truetype');
+            font-weight: 600;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'BricolageGrotesque', sans-serif;
+            background-color: #EFF9E5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #EFF9E5;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav img {
+            height: 50px;
+        }
+
+        .hero {
+            text-align: center;
+            background-image: url('https://raw.githubusercontent.com/Wallcraftcorp/website/refs/heads/main/Main1.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: #6D4F84;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .hero a {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: 600;
+            color: #EFF9E5;
+            background-color: #6D4F84;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #D0E6B8;
+            color: #6D4F84;
+        }
+
+        .categories {
+            padding: 40px 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 15px 0;
+            color: #6D4F84;
+        }
+
+        #contact {
+            padding: 40px 10px;
+            background-color: #6D4F84;
+            color: #EFF9E5;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        #contact p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        #contact a {
+            color: #D0E6B8;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #6D4F84;
+            color: #EFF9E5;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer .social-links {
+            margin-top: 10px;
+        }
+
+        footer .social-links a {
+            text-decoration: none;
+            color: #EFF9E5;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #D0E6B8;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero a {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="https://raw.githubusercontent.com/Wallcraftcorp/website/refs/heads/main/Wallcraft_logo.png"
+                alt="Wallcraft Logo">
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Wall to Wall Perfection™</h1>
+        <p>Premium wallpapers and expert installation services.</p>
+        <a href="#categories">Explore Our Designs</a>
+    </section>
+
+    <section id="categories" class="categories">
+        <div class="category">
+            <img src="https://i.etsystatic.com/27256949/r/il/423bff/3450304411/il_1080xN.3450304411_79zw.jpg"
+                alt="Modern Designs">
+            <h3>Modern Designs</h3>
+        </div>
+        <div class="category">
+            <img src="https://cdn.tapetender70er.de/media/image/0e/c6/a3/Imperia-A_864682_1348x693.webp"
+                alt="Classic Styles">
+            <h3>Classic Styles</h3>
+        </div>
+        <div class="category">
+            <img src="https://www.feathr.com/wp-content/uploads/feathr-create-own-wallpaper2.jpg.webp"
+                alt="Custom Creations">
+            <h3>Custom Creations</h3>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: <a href="tel:+17188882222">+1 718 888 2222</a></p>
+        <p>Email: <a href="mailto:info@wallcraftwallpaper.com">info@wallcraftwallpaper.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Wallcraft Wallpaper | Transforming Spaces, One Wall at a Time</p>
+    </footer>
+</body>
+
+</html>
