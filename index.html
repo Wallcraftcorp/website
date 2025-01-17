@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Wallcraft Wallpaper offers premium wallpaper designs and professional installation services to transform your spaces.">
+    <meta name="keywords" content="wallpaper, premium wallpapers, custom designs, professional wallpaper installation">
+    <meta name="author" content="Wallcraft Wallpaper">
     <title>Wallcraft Wallpaper</title>
     <link rel="icon"
         href="https://raw.githubusercontent.com/Wallcraftcorp/website/refs/heads/main/Wallcraft_favicon.png"
@@ -11,6 +15,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             margin: 0;
@@ -50,18 +58,21 @@
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             /* Dynamically adjusts size based on screen width */
             font-weight: 600;
             margin: 0;
             overflow: hidden;
             white-space: nowrap;
-            /* Ensures the text does not wrap */
+            /* Prevents wrapping */
             border-right: 3px solid #6D4F84;
             /* Cursor effect */
             width: 25ch;
-            /* Matches the length of the text */
-            animation: typing 4s steps(25, end), blink-caret 0.75s step-end infinite;
+            /* Matches the exact text length */
+            max-width: 100%;
+            /* Ensures it does not exceed the viewport width */
+            animation: typing 4s steps(25, end), blink-caret 0.75s step-end 5;
+            /* Stops blinking after 5 cycles */
             animation-fill-mode: forwards;
             /* Ensures the text stays visible after typing */
             text-align: center;
@@ -74,7 +85,6 @@
 
             to {
                 width: 25ch;
-                /* Matches the exact text length */
             }
         }
 
@@ -90,6 +100,20 @@
             }
         }
 
+        /* Responsive adjustments to ensure no overflow */
+        .hero {
+            padding: 0 20px;
+            /* Adds padding to prevent text from touching edges */
+            overflow: hidden;
+            /* Ensures no horizontal scroll */
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(1.8rem, 4vw, 2.8rem);
+                /* Adjust font size for smaller screens */
+            }
+        }
 
 
         .hero p {
@@ -169,16 +193,43 @@
             font-size: 1.1em;
             font-style: italic;
             color: #333;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(20px);
+            /* Slightly offset */
+            animation: fadeInUp 1s ease forwards;
+            /* Fade-in effect */
         }
 
-        .testimonial p {
-            margin: 0 0 10px;
+        .testimonial:nth-child(1) {
+            animation-delay: 0.2s;
         }
 
-        .testimonial span {
-            font-weight: bold;
-            color: #6D4F84;
+        .testimonial:nth-child(2) {
+            animation-delay: 0.4s;
         }
+
+        /* Add more delays for additional testimonials */
+        .testimonial:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
 
         #contact {
             padding: 40px 10px;
