@@ -281,6 +281,20 @@
         footer .social-links a:hover {
             color: #D0E6B8;
         }
+
+        footer p a {
+            text-decoration: none;
+            /* Removes underline */
+            color: inherit;
+            /* Matches the parent text color */
+            transition: color 0.3s ease;
+            /* Adds a smooth color change on hover */
+        }
+
+        footer p a:hover {
+            color: #D0E6B8;
+            /* Change to your desired hover color */
+        }
     </style>
 </head>
 
@@ -344,7 +358,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Wallcraft Wallpaper | Transforming Spaces, One Wall at a Time | Created by Teknical</p>
+        <p>&copy; 2024 Wallcraft Wallpaper | Created by <a href="https://teknical.tech">Teknical</a></p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
