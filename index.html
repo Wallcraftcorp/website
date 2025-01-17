@@ -8,6 +8,7 @@
     <link rel="icon"
         href="https://raw.githubusercontent.com/Wallcraftcorp/website/refs/heads/main/Wallcraft_favicon.png"
         type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
@@ -27,6 +28,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
             padding: 10px 0;
+            animation: slideDown 0.5s ease-in-out;
         }
 
         nav img {
@@ -48,10 +50,47 @@
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: clamp(2rem, 5vw, 4rem);
+            /* Dynamically adjusts size based on screen width */
             font-weight: 600;
             margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            /* Ensures the text does not wrap */
+            border-right: 3px solid #6D4F84;
+            /* Cursor effect */
+            width: 25ch;
+            /* Matches the length of the text */
+            animation: typing 4s steps(25, end), blink-caret 0.75s step-end infinite;
+            animation-fill-mode: forwards;
+            /* Ensures the text stays visible after typing */
+            text-align: center;
         }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 25ch;
+                /* Matches the exact text length */
+            }
+        }
+
+        @keyframes blink-caret {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #6D4F84;
+            }
+        }
+
+
 
         .hero p {
             font-size: 1.2em;
@@ -67,12 +106,13 @@
             background-color: #6D4F84;
             border-radius: 5px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .hero a:hover {
             background-color: #D0E6B8;
             color: #6D4F84;
+            transform: scale(1.05);
         }
 
         .categories {
@@ -108,6 +148,35 @@
             font-size: 1.2em;
             font-weight: 600;
             margin: 15px 0;
+            color: #6D4F84;
+        }
+
+        #testimonials {
+            padding: 40px 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #testimonials h2 {
+            font-size: 2em;
+            color: #6D4F84;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            font-size: 1.1em;
+            font-style: italic;
+            color: #333;
+        }
+
+        .testimonial p {
+            margin: 0 0 10px;
+        }
+
+        .testimonial span {
+            font-weight: bold;
             color: #6D4F84;
         }
 
@@ -161,25 +230,6 @@
         footer .social-links a:hover {
             color: #D0E6B8;
         }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .hero a {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
-
-            .categories {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 
@@ -198,32 +248,58 @@
     </section>
 
     <section id="categories" class="categories">
-        <div class="category">
+        <div class="category" data-aos="fade-up">
             <img src="https://i.etsystatic.com/27256949/r/il/423bff/3450304411/il_1080xN.3450304411_79zw.jpg"
                 alt="Modern Designs">
             <h3>Modern Designs</h3>
         </div>
-        <div class="category">
+        <div class="category" data-aos="fade-up" data-aos-delay="100">
             <img src="https://cdn.tapetender70er.de/media/image/0e/c6/a3/Imperia-A_864682_1348x693.webp"
                 alt="Classic Styles">
             <h3>Classic Styles</h3>
         </div>
-        <div class="category">
+        <div class="category" data-aos="fade-up" data-aos-delay="200">
             <img src="https://www.feathr.com/wp-content/uploads/feathr-create-own-wallpaper2.jpg.webp"
                 alt="Custom Creations">
             <h3>Custom Creations</h3>
         </div>
     </section>
 
+    <section id="testimonials" style="background-color: #EFF9E5; padding: 40px 10px;">
+        <h2 style="text-align: center; font-size: 2em; color: #6D4F84; margin-bottom: 30px;">What Our Customers Say</h2>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+            <div class="testimonial"
+                style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <p style="font-size: 1.1em; color: #333; margin-bottom: 10px;">"Wallcraft transformed our living room.
+                    The
+                    team was professional and efficient!"</p>
+                <span style="font-weight: bold; color: #6D4F84;">- Charles R. Gordon</span>
+            </div>
+            <div class="testimonial"
+                style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <p style="font-size: 1.1em; color: #333; margin-bottom: 10px;">"The quality of their wallpapers is
+                    unmatched. Highly recommend!"</p>
+                <span style="font-weight: bold; color: #6D4F84;">- Tommy K. Pearce</span>
+            </div>
+        </div>
+    </section>
+
+
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Phone: <a href="tel:+13479843461">+1 718 888 2222</a></p>
-        <p>Email: <a href="mailto:joel@wallcraftwallpaper.com">info@wallcraftwallpaper.com</a></p>
+        <p>Phone: <a href="tel:+13479843461">347-984-3461</a></p>
+        <p>Email: <a href="mailto:joel@wallcraftwallpaper.com">joel@wallcraftwallpaper.com</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Wallcraft Wallpaper | Transforming Spaces, One Wall at a Time | Created by Teknical</p>
+        <p>&copy; 2024 Wallcraft Wallpaper | Transforming Spaces, One Wall at a Time | Created by Teknical</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
